@@ -11,7 +11,7 @@ mod generator;
     author = "Prabhnoor Singh",
     about = "A simple lorem ipsum generator."
 )]
-#[clap(group = ArgGroup::new("size").required(true).multiple(false))]
+#[clap(group = ArgGroup::new("size").required(false).multiple(false))]
 struct Arguments {
     #[clap(short = 'w', long = "words", group = "size", help = "Number of words to generate")]
     words: Option<i32>,
