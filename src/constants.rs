@@ -1,4 +1,5 @@
 // words used in lorem ipsum text
+//@SuppressWarnings("SpellCheckingInspection")
 static WORDS : &'static [&'static str] = &[
     "ad",
     "adipisicing",
@@ -62,4 +63,4 @@ static WORDS : &'static [&'static str] = &[
     "velit",
     "veniam",
     "voluptate",
-]
+];
