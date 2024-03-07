@@ -1,6 +1,6 @@
 // words used in lorem ipsum text
 //@SuppressWarnings("SpellCheckingInspection")
-static WORDS : &'static [&'static str] = &[
+pub(crate) const WORDS : &'static [&'static str] = &[
     "ad",
     "adipisicing",
     "aliqua",
@@ -64,3 +64,6 @@ static WORDS : &'static [&'static str] = &[
     "veniam",
     "voluptate",
 ];
+
+// store length of words as a static
+pub(crate) static WORDS_LENGTH: i32 = WORDS.len() as i32;
