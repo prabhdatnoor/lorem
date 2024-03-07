@@ -66,4 +66,4 @@ pub(crate) const WORDS : &'static [&'static str] = &[
 ];
 
 // store length of words as a static
-pub(crate) static WORDS_LENGTH: i32 = WORDS.len() as i32;
+pub(crate) const WORDS_LENGTH: i32 = WORDS.len() as i32;

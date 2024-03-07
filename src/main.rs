@@ -5,11 +5,17 @@ mod constants;
 mod generator;
 
 #[derive( Parser, Debug)]
+#[clap(
+    name = "lorem",
+    version = "1.0",
+    author = "Prabhnoor Singh",
+    about = "A simple lorem ipsum generator."
+)]
 #[clap(group = ArgGroup::new("size").required(true).multiple(false))]
 struct Arguments {
-    #[clap(short = 'w', long = "words", group = "size")]
+    #[clap(short = 'w', long = "words", group = "size", help = "Number of words to generate")]
     words: Option<i32>,
-    #[clap(short = 'c', long = "characters", group = "size")]
+    #[clap(short = 'c', long = "characters", group = "size", help = "Number of characters to generate (including newline and spaces)")]
     characters: Option<i32>,
 }
 
@@ -34,7 +40,7 @@ fn main() {
     // if characters is not None
     else if let Some(characters) = args.characters {
         // add characters to the buffer
-        generator.add_characters(characters);
+        generator.add_characters(characters -1 );
     }
 
     // print the buffer

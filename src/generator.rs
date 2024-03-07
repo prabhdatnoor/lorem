@@ -70,12 +70,14 @@ impl Generator {
             // write the word to the buffer
             self.write(sub);
 
+            x -= word_len;
+
             // if we have more characters to add
-            if x > word_len {
+            if x > 0 {
                 // add a space
                 self.write(" ");
                 // subtract the length of the word and the space from x
-                x -= word_len + 1;
+                x -=  1;
             }
         }
     }
@@ -83,7 +85,7 @@ impl Generator {
     // return and clear the buffer as string
     pub fn get_and_clear_buffer(&mut self) -> String {
         // create a new string from the buffer
-        let s = String::from_utf8_lossy(&self.buffer).to_string();
+        let s = self.buffer.iter().map(|&c| c as char).collect();
         // clear the buffer
         self.buffer.clear();
         // return the string
