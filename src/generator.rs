@@ -5,8 +5,6 @@ use crate::constants;
 pub(crate) struct Generator {
     // random number generator
     rng: rand::rngs::ThreadRng,
-    // new line character
-    new_line: String,
     // a buffer to store the generated text
     buffer: Vec<u8>,
 }
@@ -15,7 +13,6 @@ pub(crate) struct Generator {
 impl Generator {
     // constructor
     pub fn new() -> Self {
-        let new_line = String::from("\n");
         // create a new random number generator
         let rng = rand::thread_rng();
         // create a new buffer
@@ -23,7 +20,6 @@ impl Generator {
         // return a new instance of Generator
         Self {
             rng,
-            new_line,
             buffer,
         }
     }
